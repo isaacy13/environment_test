@@ -45,8 +45,8 @@ RSpec.describe Price, type: :model do
 end
 
 
-RSpec.describe Date, type: :model do
-  date = Date.new(date: Time.new)
+RSpec.describe PublishDate, type: :model do
+  date = PublishDate.new(publish_date: Time.new)
 
   it 'is valid with valid attributes' do
     expect(date).to be_valid

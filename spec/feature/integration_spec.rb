@@ -26,21 +26,25 @@ end
 RSpec.describe 'Creating a price', type: :feature do
   scenario 'valid inputs' do
     visit new_price_path
-    fill_in 'price', with: 50
+    fill_in 'Price', with: 50
     click_on 'Create Price'
     visit prices_path
     expect(page).to have_content(50)
   end
 end
 
-RSpec.describe 'Creating an date', type: :feature do
-  time = Time.new
+RSpec.describe 'Creating a PublishDate', type: :feature do
+  time = "2017-01-29 21:14:00"
 
   scenario 'valid inputs' do
-    visit new_date_path
-    fill_in 'Title', with: time
-    click_on 'Create Date'
-    visit authors_path
+    visit new_publish_date_path
+    select '2017', :from => 'publish_date_publish_date_1i'
+    select 'January', :from => 'publish_date_publish_date_2i'
+    select '29', :from => 'publish_date_publish_date_3i'
+    select '21', :from => 'publish_date_publish_date_4i'
+    select '14', :from => 'publish_date_publish_date_5i'
+    click_on 'Create Publish date'
+    visit publish_dates_path
     expect(page).to have_content(time)
   end
 end
